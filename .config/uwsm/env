@@ -2,8 +2,10 @@ export XCURSOR_SIZE,20
 export HYPRCURSOR_SIZE,20
 export GDK_SCALE,1.2
 export PATH=$PATH:$HOME/.local/bin
-export PATH=$PATH:$ANDROID_SDK_ROOT/cmdline-tools/latest/bin/
-export PATH=$PATH:$ANDROID_SDK_ROOT/platform-tools/
-export PATH=$PATH:$ANDROID_SDK_ROOT/tools/bin/
-export PATH=$PATH:$ANDROID_ROOT/emulator
-export PATH=$PATH:$ANDROID_SDK_ROOT/tools/
+
+export ANDROID_HOME=$HOME/Android/Sdk
+export PATH=$PATH:$ANDROID_HOME/emulator
+export PATH=$PATH:$ANDROID_HOME/platform-tools
+export PATH=$PATH:$ANDROID_HOME/cmdline-tools/latest/bin
+export ANDROID_AVD_HOME=$HOME/.config/.android/avd
+export PATH=$PATH:/opt/flutter/bin
