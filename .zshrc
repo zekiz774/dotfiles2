@@ -25,6 +25,4 @@ source $ZSH/oh-my-zsh.sh
 
 ZSH_AUTOSUGGEST_STRATEGY=(match_prev_cmd completion)
 
-# Path config
-path+=('home/zekiz/.local/bin')
-export PATH
+
