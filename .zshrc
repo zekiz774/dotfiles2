@@ -25,4 +25,6 @@ source $ZSH/oh-my-zsh.sh
 
 ZSH_AUTOSUGGEST_STRATEGY=(match_prev_cmd completion)
 
+unsetopt correct_all
+unsetopt correct
 
