@@ -2,6 +2,7 @@ export XCURSOR_SIZE,20
 export HYPRCURSOR_SIZE,20
 export GDK_SCALE,1.2
 export PATH=$PATH:$HOME/.local/bin
+export PATH=$PATH:$HOME/.cargo/bin
 
 export ANDROID_HOME=$HOME/Android/Sdk
 export PATH=$PATH:$ANDROID_HOME/emulator
