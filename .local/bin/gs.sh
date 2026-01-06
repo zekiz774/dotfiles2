@@ -10,11 +10,11 @@ MONITOR_SINK=alsa_output.pci-0000_03_00.1.hdmi-stereo-extra3
 (
   sleep 1
   pactl set-default-sink $MONITOR_SINK
-  pactl set-sink-volume $MONITOR_SINK 100%
+  pactl set-sink-volume $MONITOR_SINK 150%
 ) &
 
 # start gamescope
-ENABLE_HDR_WSI=1 gamescope --fullscreen -w 3840 -h 2160 --hdr-enabled --hdr-debug-force-output --hdr-sdr-content-nits 600 --mangoapp -- env ENABLE_GAMESCOPE_WSI=1 DXVK_HDR=1 DISABLE_HDR_WSI=1 steam -tenfoot
+ENABLE_HDR_WSI=1 gamescope --fullscreen -w 3840 -h 2160 --hdr-enabled --hdr-debug-force-output --hdr-sdr-content-nits 600 --mangoapp -e -- env ENABLE_GAMESCOPE_WSI=1 DXVK_HDR=1 DISABLE_HDR_WSI=1 steam -tenfoot
 
 # reset after gs closed
 
