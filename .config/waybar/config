@@ -62,7 +62,7 @@
   },
 
   "custom/gpu-usage": {
-    "exec": "cat /sys/class/hwmon/hwmon6/device/gpu_busy_percent",
+    "exec": "cat /sys/class/hwmon/hwmon1/device/gpu_busy_percent",
     "format": "󰢮  {icon} {text}%",
     "format-icons": ["▁", "▂", "▃", "▄", "▅", "▆", "▇", "█"],
     "interval": 1
