@@ -14,6 +14,7 @@ MONITOR_SINK=alsa_output.pci-0000_03_00.1.hdmi-stereo-extra3
 ) &
 
 # start gamescope
+pkill steam
 ENABLE_HDR_WSI=1 gamescope --fullscreen -w 3840 -h 2160 --hdr-enabled --hdr-debug-force-output --hdr-sdr-content-nits 600 --mangoapp -e -- env ENABLE_GAMESCOPE_WSI=1 DXVK_HDR=1 DISABLE_HDR_WSI=1 steam -tenfoot
 
 # reset after gs closed

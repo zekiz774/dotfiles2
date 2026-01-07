@@ -10,17 +10,17 @@ source /usr/share/cachyos-zsh-config/cachyos-config.zsh
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
-# init zoxide
+# === init zoxide ==
 eval "$(zoxide init zsh)"
 
-# --- Plugins ---
+# ===Plugins ===
 plugins=(
   git
   zsh-autosuggestions
   zsh-syntax-highlighting
 )
 
-# --- Initialize Oh My Zsh ---
+# === Initialize Oh My Zsh ===
 source $ZSH/oh-my-zsh.sh
 
 ZSH_AUTOSUGGEST_STRATEGY=(match_prev_cmd completion)
