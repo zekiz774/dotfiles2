@@ -1,3 +1,4 @@
+#!/usr/bin/env bash
 # switch TV monitor on and main monitor off
 hyprctl keyword monitor HDMI-A-1, 3840x2160@120.00Hz, auto, 1, vrr, 2, bitdepth, 10
 hyprctl keyword monitor DP-3, disable
