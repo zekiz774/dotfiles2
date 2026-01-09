@@ -5,10 +5,7 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
-source /usr/share/cachyos-zsh-config/cachyos-config.zsh
-
-# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
-[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+ZSH_THEME="powerlevel10k/powerlevel10k"
 
 # === init zoxide ==
 eval "$(zoxide init zsh)"
@@ -28,3 +25,5 @@ ZSH_AUTOSUGGEST_STRATEGY=(match_prev_cmd completion)
 unsetopt correct_all
 unsetopt correct
 
+# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
+[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
