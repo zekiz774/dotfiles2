@@ -3,6 +3,18 @@
 hyprctl keyword monitor HDMI-A-1, 3840x2160@120.00Hz, auto, 1, vrr, 2, bitdepth, 10
 hyprctl keyword monitor DP-3, disable
 
+# disable animations (ik, it's not ideal to write the not like monitor config like this, but i just want something that works right now)
+hyprctl --batch "\
+        keyword animations:enabled 0;\
+        keyword animation borderangle,0; \
+        keyword decoration:shadow:enabled 0;\
+        keyword decoration:blur:enabled 0;\
+	    keyword decoration:fullscreen_opacity 1;\
+        keyword general:gaps_in 0;\
+        keyword general:gaps_out 0;\
+        keyword general:border_size 1;\
+        keyword decoration:rounding 0"
+
 # set audio device
 CURRENT_SINK=$(pactl get-default-sink)
 CURRENT_VOLUME=$(pactl -f json get-sink-volume $CURRENT_SINK | jq '.volume["front-left"].value')
