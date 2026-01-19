@@ -28,3 +28,5 @@ ZSH_AUTOSUGGEST_STRATEGY=(match_prev_cmd completion)
 unsetopt correct_all
 unsetopt correct
 
+export PATH=${PATH}:/opt/oss-cad-suite/bin
+
