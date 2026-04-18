@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 # switch TV monitor on and main monitor off
 hyprctl keyword monitor HDMI-A-1, 3840x2160@120.00Hz, auto, 1, vrr, 2, bitdepth, 10
-hyprctl keyword monitor DP-3, disable
+#hyprctl keyword monitor DP-3, disable
 
 # disable animations (ik, it's not ideal to write the not like monitor config like this, but i just want something that works right now)
 hyprctl --batch "\
@@ -9,7 +9,7 @@ hyprctl --batch "\
         keyword animation borderangle,0; \
         keyword decoration:shadow:enabled 0;\
         keyword decoration:blur:enabled 0;\
-	    keyword decoration:fullscreen_opacity 1;\
+	      keyword decoration:fullscreen_opacity 1;\
         keyword general:gaps_in 0;\
         keyword general:gaps_out 0;\
         keyword general:border_size 1;\
@@ -28,17 +28,21 @@ ENDSSH
 
 # sets audio device and volume
 VOLUME=120%
-MONITOR_SINK=alsa_output.pci-0000_03_00.1.hdmi-stereo-extra3
+CARD=alsa_card.pci-0000_03_00.1
+SINK=alsa_output.pci-0000_03_00.1.hdmi-stereo-extra3
+PORT=hdmi-output-3
 (
+  pactl set-card-profile "$CARD" output:hdmi-stereo-extra3
   sleep 1
-  pactl set-default-sink $MONITOR_SINK
+  pactl set-default-sink "$SINK"
+  pactl set-sink-port "$SINK" "$PORT"
   pactl set-sink-volume $MONITOR_SINK $VOLUME
 
 ) &
 
 # start gamescope
 pkill steam
-ENABLE_HDR_WSI=1 gamescope --fullscreen -w 3840 -h 2160 --hdr-enabled --hdr-debug-force-output --hdr-sdr-content-nits 600 --mangoapp --adaptive-sync -f -e -- env ENABLE_GAMESCOPE_WSI=1 DXVK_HDR=1 DISABLE_HDR_WSI=1 steam -tenfoot
+ENABLE_HDR_WSI=1 gamescope --fullscreen -w 3840 -h 2160 --hdr-enabled --hdr-debug-force-output --hdr-sdr-content-nits 600 --adaptive-sync -f -e -- env ENABLE_GAMESCOPE_WSI=1 DXVK_HDR=1 DISABLE_HDR_WSI=1 steam -tenfoot
 
 # reset after gs closed
 
