@@ -31,6 +31,7 @@ unsetopt correct
 export PATH=${PATH}:/opt/oss-cad-suite/bin:/home/zekiz/.local/share/gem/ruby/3.4.0/bin
 
 autoload -U compinit; compinit
+
 export PYENV_ROOT="$HOME/.pyenv"
 [[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
 eval "$(pyenv init - zsh)"
