@@ -112,3 +112,6 @@ unsetopt correct
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
+
+# Init zoxide
+eval "$(zoxide init zsh)"
