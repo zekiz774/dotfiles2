@@ -115,3 +115,7 @@ unsetopt correct
 
 # Init zoxide
 eval "$(zoxide init zsh)"
+
+# Keyboard config
+bindkey "[D" backward-word # ALT-left-arrow  ⌥ + ←
+bindkey "[C" forward-word  # ALT-right-arrow ⌥ + →
